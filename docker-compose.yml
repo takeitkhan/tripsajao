@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: propsaas_owner
+      POSTGRES_PASSWORD: owner_pw
+      POSTGRES_DB: propsaas
+    volumes:
+      - ./docker/initdb.sql:/docker-entrypoint-initdb.d/00-roles.sql:ro
+      - pgdata:/var/lib/postgresql/data
+    ports: ["5432:5432"]
+  redis:
+    image: redis:7
+    # Ex = key-event notifications for expired keys (the 10-minute hold engine)
+    command: ["redis-server", "--notify-keyspace-events", "Ex"]
+    ports: ["6379:6379"]
+  api: &app
+    build: .
+    env_file: .env
+    environment: &env
+      DATABASE_URL: postgresql+asyncpg://propsaas_app:app_pw@db:5432/propsaas
+      DATABASE_URL_SYSTEM: postgresql+asyncpg://propsaas_system:system_pw@db:5432/propsaas
+      DATABASE_URL_MIGRATIONS: postgresql+asyncpg://propsaas_owner:owner_pw@db:5432/propsaas
+      REDIS_URL: redis://redis:6379/0
+    depends_on: [db, redis]
+    ports: ["8000:8000"]
+    volumes:
+      - media:/srv/media_store     # uploaded photos and videos survive restarts
+  worker:
+    <<: *app
+    command: celery -A app.workers.celery_app.celery_app worker -l info
+    ports: []
+  beat:
+    <<: *app
+    command: celery -A app.workers.celery_app.celery_app beat -l info
+    ports: []
+  hold-listener:
+    <<: *app
+    command: python -m app.workers.hold_listener
+    ports: []
+volumes:
+  pgdata:
+  media:

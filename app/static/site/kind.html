@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Sajao</title>
+  <meta name="description" content="Trip Sajao for resorts, hotels, houseboats and events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/site/site.css">
+  <script type="module" src="/site/site.js"></script>
+</head>
+<body data-page="kind" data-kind="__KIND__">
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div id="site-header"></div>
+<main>
+<section class="hero kindhero" id="hero">
+  <svg class="route-bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 560C160 470 240 620 420 520S640 300 800 380 1010 520 1230 250"/></svg>
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker" id="k-kicker"></p>
+      <h1 id="k-h1"></h1>
+      <p class="lead" id="k-lead"></p>
+      <ul class="check" id="k-check"></ul>
+      <div class="cta">
+        <a class="btn big" href="/register/" data-bn="আপনার ব্যবসা নিবন্ধন করুন">Register your business</a>
+        <a class="btn ghost big" href="#contact" data-bn="আমাদের সঙ্গে কথা বলুন">Talk to us</a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="stage-head"><b id="st-title"></b><span id="st-sub"></span></div>
+      <div class="board bigboard" id="board"></div>
+      <div class="toast" id="toast"><i></i><span id="toast-t"></span></div>
+      <ul class="legend" aria-label="Status colours">
+        <li><i class="d av"></i><span data-bn="ফাঁকা">Available</span></li>
+        <li><i class="d bk"></i><span data-bn="বুক করা">Booked</span></li>
+        <li><i class="d hd"></i><span data-bn="হোল্ডে আছে">On hold</span></li>
+        <li><i class="d mt"></i><span data-bn="রক্ষণাবেক্ষণ">Maintenance</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="manage"><div class="wrap">
+  <div class="sec-h"><h2 id="m-h"></h2><p id="m-p"></p></div>
+  <div class="kindgrid" id="m-grid"></div>
+</div></section>
+
+<section class="band alt" id="flow"><div class="wrap">
+  <div class="sec-h"><h2 id="f-h"></h2><p id="f-p"></p></div>
+  <ol class="flow" id="f-list"></ol>
+</div></section>
+
+<section class="band" id="live"><div class="wrap">
+  <div class="sec-h"><h2 id="l-h"></h2><p id="l-p"></p></div>
+  <div class="live" id="l-grid"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+  <p class="note" id="l-note"></p>
+</div></section>
+
+<section class="band alt" id="others"><div class="wrap">
+  <div class="sec-h" style="margin-bottom:20px"><h2 style="font-size:clamp(24px,3vw,34px)" data-bn="একই ইঞ্জিনে আরও যা চলে">What else runs on the same engine</h2></div>
+  <div class="others" id="o-list"></div>
+</div></section>
+
+<div id="site-contact"></div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>

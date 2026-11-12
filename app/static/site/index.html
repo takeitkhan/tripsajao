@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Sajao - one platform for resorts, hotels, houseboats and events</title>
+  <meta name="description" content="Trip Sajao runs the whole travel business: live availability, 10-minute holds, events and tours, partner and reseller sales with automatic commission, and an API for your own website. In Bengali and English.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/site/site.css">
+  <script type="module" src="/site/site.js"></script>
+</head>
+<body data-page="home">
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div id="site-header"></div>
+
+<main>
+<section class="hero" id="hero">
+  <svg class="route-bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-20 560C160 470 240 620 420 520S640 300 800 380 1010 520 1230 250"/></svg>
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker" data-bn="রিসোর্ট, হোটেল, হাউজবোট ও ইভেন্টের জন্য">For resorts, hotels, houseboats and events</p>
+      <h1 data-bn="আপনার ট্রাভেল ব্যবসা, এক জায়গায় সাজানো">Your whole travel business, planned in one place</h1>
+      <p class="lead" data-bn="Trip Sajao রুম, কেবিন, ইভেন্ট ও ট্যুরের বুকিং চালায়। কোনো ডাবল বুকিং নেই, পার্টনারদের কমিশন নিজে থেকেই হিসাব হয়, আর নিজের ওয়েবসাইটের জন্য আছে API।">Trip Sajao runs bookings for rooms, cabins, events and tours. No double bookings, partner commission worked out for you, and an API for your own website.</p>
+      <div class="cta">
+        <a class="btn big" href="/register/" data-bn="আপনার ব্যবসা নিবন্ধন করুন">Register your business</a>
+        <a class="btn ghost big" href="#journey" data-bn="পুরো যাত্রাটা দেখুন">See the whole journey</a>
+      </div>
+      <div class="pills" aria-label="Pages">
+        <a href="/resorts" style="--c:var(--resort)"><i></i><span data-bn="রিসোর্ট">Resorts</span></a>
+        <a href="/hotels" style="--c:#7C93FF"><i></i><span data-bn="হোটেল">Hotels</span></a>
+        <a href="/houseboats" style="--c:#2CC3D6"><i></i><span data-bn="হাউজবোট">Houseboats</span></a>
+        <a href="/events" style="--c:#FF7088"><i></i><span data-bn="ইভেন্ট ও ট্যুর">Events &amp; tours</span></a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="stage-tabs" role="tablist" id="stage-tabs">
+        <button role="tab" type="button" aria-selected="true" data-k="resort" data-bn="রিসোর্ট">Resort</button>
+        <button role="tab" type="button" aria-selected="false" data-k="hotel" data-bn="হোটেল">Hotel</button>
+        <button role="tab" type="button" aria-selected="false" data-k="houseboat" data-bn="হাউজবোট">Houseboat</button>
+        <button role="tab" type="button" aria-selected="false" data-k="event" data-bn="ইভেন্ট">Event</button>
+      </div>
+      <div class="stage-head"><b id="st-title"></b><span id="st-sub"></span></div>
+      <div class="board" id="board" aria-live="off"></div>
+      <div class="toast" id="toast"><i></i><span id="toast-t"></span></div>
+      <ul class="legend" aria-label="Status colours">
+        <li><i class="d av"></i><span data-bn="ফাঁকা">Available</span></li>
+        <li><i class="d bk"></i><span data-bn="বুক করা">Booked</span></li>
+        <li><i class="d hd"></i><span data-bn="হোল্ডে আছে">On hold</span></li>
+        <li><i class="d mt"></i><span data-bn="রক্ষণাবেক্ষণ">Maintenance</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="kinds">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 data-bn="চার ধরনের ব্যবসা, একটাই ইঞ্জিন">Four kinds of business, one engine</h2>
+      <p data-bn="প্রতিটির নিজস্ব বোর্ড ও নিয়ম আছে। ভেতরের বুকিং, পেমেন্ট, পার্টনার আর ওয়েবসাইট API সবার জন্য এক।">Each has its own board and rules. Bookings, payments, partners and the website API underneath are the same for all.</p>
+    </div>
+    <div class="kinds">
+      <a class="kind" href="/resorts" style="--c:var(--resort)"><span class="ico" data-ico="building"></span><h3 data-bn="রিসোর্ট">Resorts</h3><p data-bn="কটেজ, ডুপ্লেক্স ও রুম। ভবন ও তলা ধরে সাজানো লাইভ গ্রিড।">Cottages, duplexes and rooms on a live building grid.</p><span class="go" data-bn="রিসোর্টের পাতা দেখুন">See resorts</span></a>
+      <a class="kind" href="/hotels" style="--c:var(--hotel)"><span class="ico" data-ico="hotel"></span><h3 data-bn="হোটেল">Hotels</h3><p data-bn="তলা ও রুম নম্বর অনুযায়ী বোর্ড, দৈনিক রেট ও দ্রুত চেক-ইন।">Floor and room-number board, daily rates and quick check-in.</p><span class="go" data-bn="হোটেলের পাতা দেখুন">See hotels</span></a>
+      <a class="kind" href="/houseboats" style="--c:var(--boat)"><span class="ico" data-ico="boat"></span><h3 data-bn="হাউজবোট">Houseboats</h3><p data-bn="পুরো বোট ভাড়া বা আলাদা কেবিন। নৌকার আকারে কেবিনের লাইভ অবস্থা।">Charter the whole boat or sell single cabins, shown on the hull.</p><span class="go" data-bn="হাউজবোটের পাতা দেখুন">See houseboats</span></a>
+      <a class="kind" href="/events" style="--c:var(--event)"><span class="ico" data-ico="ticket"></span><h3 data-bn="ইভেন্ট ও ট্যুর">Events &amp; tours</h3><p data-bn="নির্দিষ্ট তারিখের ট্যুর ও অনুষ্ঠান। সিট সীমা, ১০ মিনিটের হোল্ড ও পেমেন্ট যাচাই।">Dated trips and events with seat limits, 10-minute holds and payment checks.</p><span class="go" data-bn="ইভেন্টের পাতা দেখুন">See events</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="journey">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 data-bn="একটি বুকিংয়ের পুরো যাত্রা">The whole journey of one booking</h2>
+      <p data-bn="একজন অতিথি খুঁজে পাওয়া থেকে শুরু করে মালিকের হিসাব পর্যন্ত। স্ক্রল করে দেখুন কোথায় কী ঘটে।">From a guest finding a stay to the owner's books. Scroll to see what happens at each step.</p>
+    </div>
+    <div class="journey" id="journey-list">
+      <div class="jfill" id="jfill"></div>
+
+      <article class="j"><span class="j-n">1</span>
+        <div><span class="who" data-bn="অতিথি">Guest</span><h3 data-bn="অতিথি খুঁজে পান, সত্যিকারের ফাঁকা দেখেন">A guest searches and sees what is truly free</h3><p data-bn="আপনার ওয়েবসাইট বা অ্যাপ API থেকে ফাঁকা রুম, কেবিন ও ইভেন্টের সিট এবং তারিখ ধরে দাম পায়। দেখানো মানেই সত্যিই ফাঁকা।">Your website or app reads free rooms, cabins and event seats, and the price for those dates, from the API. What it shows is really free.</p></div>
+        <div class="panel"><div class="search"><div><span data-bn="তারিখ">Dates</span><b data-bn="১২–১৪ ডিসেম্বর">12 - 14 Dec</b></div><div><span data-bn="অতিথি">Guests</span><b data-bn="২ জন">2 guests</b></div></div>
+          <div class="row"><div class="sp"><b data-bn="পাহাড়ের কটেজ">Hill cottage</b><small data-bn="রিসোর্ট · ৩টি ফাঁকা">Resort · 3 free</small></div><span class="chip av" data-bn="ফাঁকা">Free</span></div>
+          <div class="row"><div class="sp"><b data-bn="লেকের কেবিন">Lake cabin</b><small data-bn="হাউজবোট · পুরো বোট বা একটি কেবিন">Houseboat · whole boat or one cabin</small></div><span class="chip av" data-bn="ফাঁকা">Free</span></div>
+          <div class="row"><div class="sp"><b data-bn="সাজেক ট্রেক">Sajek trek</b><small data-bn="ইভেন্ট · ১২টি সিট বাকি">Event · 12 seats left</small></div><span class="chip hd" data-bn="সীমিত">Few left</span></div></div>
+      </article>
+
+      <article class="j"><span class="j-n">2</span>
+        <div><span class="who" data-bn="অতিথি">Guest</span><h3 data-bn="১০ মিনিটের জন্য রুমটা আটকে যায়">The room is held for 10 minutes</h3><p data-bn="অতিথি তথ্য দিলেই রুম বা সিট ১০ মিনিটের জন্য আটকে থাকে। এই সময়ে আর কেউ সেটা বুক করতে পারে না। টাকা না এলে নিজে থেকেই ছাড়া পায়।">The moment the guest gives their details, the room or seat is held for 10 minutes. Nobody else can take it. If no money comes, it frees itself.</p></div>
+        <div class="panel"><div class="holdbox"><div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r-bg"/><circle cx="60" cy="60" r="52" class="r-fg" id="r-fg"/></svg><b id="r-t">10:00</b></div>
+          <div><b data-bn="কটেজ ৩ আটকানো আছে">Cottage 3 is on hold</b><p style="color:var(--muted);font-size:15px" data-bn="পেমেন্টের জন্য সময় বাকি">Time left to pay</p></div></div>
+          <div class="mini" id="mini" aria-hidden="true"></div>
+          <button class="btn sm" type="button" id="r-btn" data-bn="আবার চালান">Run it again</button></div>
+      </article>
+
+      <article class="j"><span class="j-n">3</span>
+        <div><span class="who" data-bn="অতিথি ও মালিক">Guest and owner</span><h3 data-bn="পেমেন্ট, স্ক্রিনশটসহ যাচাই">Payment, checked with a screenshot</h3><p data-bn="অতিথি পুরো টাকা বা অগ্রিম (যেমন ৫০%) পাঠান এবং পেমেন্টের স্ক্রিনশট যোগ করেন। মালিক যাচাই করলেই বুকিং নিশ্চিত হয়। ভুল হলে সেটা বাতিলও করা যায়।">The guest pays in full or an advance (say 50%) and attaches the payment screenshot. The owner checks it and the booking is confirmed. A wrong payment can be rejected.</p></div>
+        <div class="panel"><h4 data-bn="বুকিং">Booking</h4>
+          <div class="row"><div class="sp"><b data-bn="অগ্রিম ৫০%">50% advance</b><small data-bn="বিকাশ · রেফারেন্স যোগ করা হয়েছে">bKash · reference added</small></div><span class="chip hd" id="pay-chip" data-bn="যাচাই বাকি">To check</span></div>
+          <div class="shot" id="shot" data-bn="পেমেন্টের স্ক্রিনশট">Payment screenshot</div>
+          <div class="row"><div class="sp"><b data-bn="মালিক যাচাই করলেন">Owner verifies</b><small data-bn="বাকি টাকা চেক-ইনের আগে">Balance due before check-in</small></div><span class="up" id="pay-amt">+ 50%</span></div></div>
+      </article>
+
+      <article class="j"><span class="j-n">4</span>
+        <div><span class="who" data-bn="সেলস ও MoU পার্টনার">Sales &amp; MoU partner</span><h3 data-bn="পার্টনারের পরিষ্কার লিংকে কমিশন নিজেই জমা হয়">Partner's clean link, commission credited by itself</h3><p data-bn="প্রতিটি পার্টনারের একটি ছোট লিংক থাকে, ঠিকানায় কোনো রেফারেল কোড দেখা যায় না। ওই লিংক দিয়ে আসা বুকিং নিজে থেকেই পার্টনারের হিসাবে যোগ হয়। পার্টনার নিজের ড্যাশবোর্ডে দেখেন ও পেআউট চান।">Each partner gets a short link with no tracking code in the address. Bookings that follow it are credited to the partner automatically. The partner watches their dashboard and asks for payouts.</p></div>
+        <div class="panel"><div class="link"><span>🔗</span><span>yourdomain.com/go/k8X9p</span></div>
+          <h4 style="margin-top:16px" data-bn="পার্টনারের খাতা">Partner ledger</h4>
+          <div class="row"><div class="sp"><b data-bn="বুকিং কমিশন · ১০%">Booking commission · 10%</b><small data-bn="কটেজ ৩ · ২ রাত">Cottage 3 · 2 nights</small></div><span class="up">+ ৳ 960</span></div>
+          <div class="row"><div class="sp"><b data-bn="ইভেন্ট কমিশন · প্রতি সিটে ৪০০">Event commission · 400 per seat</b><small data-bn="সাজেক ট্রেক · ২ সিট">Sajek trek · 2 seats</small></div><span class="up">+ ৳ 800</span></div>
+          <div class="row"><div class="sp"><b data-bn="পেআউট অনুরোধ">Payout request</b><small data-bn="মালিকের অনুমোদনের অপেক্ষায়">Waiting for the owner</small></div><span class="chip hd" data-bn="অপেক্ষায়">Pending</span></div></div>
+      </article>
+
+      <article class="j"><span class="j-n">5</span>
+        <div><span class="who" data-bn="রিসেলার এজেন্সি">Reseller agency</span><h3 data-bn="অন্য এজেন্সিও আপনার রুম বিক্রি করতে পারে">Other agencies can sell your rooms too</h3><p data-bn="একটি ব্যবসা চুক্তি করে অন্যের রুম নিজের গ্রাহকের কাছে বিক্রি করতে পারে, মালিকের নির্ধারিত দামে। কমিশন প্রতি রাত ধরে হিসাব হয় এবং বাতিলের নিয়ম আগে থেকেই ঠিক করা থাকে।">One business can agree to sell another's rooms to its own guests, at the owner's price. Commission is counted per night and the cancellation rules are settled up front.</p></div>
+        <div class="panel"><h4 data-bn="রিসেলার চুক্তি">Reseller agreement</h4>
+          <div class="row"><div class="sp"><b data-bn="এজেন্সি ক ➜ এজেন্সি খ">Agency A ➜ Agency B</b><small data-bn="খ এজেন্সির ৩টি প্রোপার্টি বিক্রি করতে পারবে">May sell 3 of B's properties</small></div><span class="chip av" data-bn="চালু">Active</span></div>
+          <div class="row"><div class="sp"><b data-bn="কমিশন">Commission</b><small data-bn="প্রতি রাত ধরে, চেক-আউটের পরে">Per night, after check-out</small></div><b>10%</b></div>
+          <div class="row"><div class="sp"><b data-bn="বাতিলের নিয়ম">Cancellation rules</b><small data-bn="মালিকের প্রকাশ করা নিয়ম অনুযায়ী ফেরত">Refund follows the owner's rules</small></div><span class="chip" data-bn="ঠিক করা">Set</span></div></div>
+      </article>
+
+      <article class="j"><span class="j-n">6</span>
+        <div><span class="who" data-bn="মালিক">Owner</span><h3 data-bn="মালিক সব এক নজরে দেখেন">The owner sees it all at a glance</h3><p data-bn="লাইভ বোর্ড, বুকিং, সংগ্রহ করা টাকা, পার্টনারদের পাওনা, ইভেন্টের সিট, ভেন্ডর ও বাজেট। সবই এক কনসোলে, বাংলায় বা ইংরেজিতে।">The live board, bookings, money collected, what partners are owed, event seats, vendors and budgets. All in one console, in Bengali or English.</p></div>
+        <div class="panel"><div class="kpis"><div><small data-bn="আজকের বুকিং">Bookings today</small><b>14</b></div><div><small data-bn="সংগ্রহ">Collected</small><b>৳ 86k</b></div><div><small data-bn="পার্টনারের পাওনা">Partners owed</small><b>৳ 9k</b></div></div>
+          <div class="mini" id="mini2" aria-hidden="true"></div>
+          <div class="row"><div class="sp"><b data-bn="ইভেন্ট সিট">Event seats</b><small data-bn="সাজেক ট্রেক · ২৮ এর মধ্যে ১৬ বিক্রি">Sajek trek · 16 of 28 sold</small></div><div style="width:90px"><div class="seatbar" style="margin:0"><i class="s1" style="width:57%"></i></div></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 data-bn="ভেতরে যা যা আছে">Everything inside</h2>
+      <p data-bn="একটি ট্রাভেল ব্যবসা চালাতে যা লাগে, সবই এক জায়গায়।">Everything a travel business needs to run, in one place.</p>
+    </div>
+    <div class="fgrid">
+      <article class="fcard"><span class="ico" data-ico="building"></span><h3 data-bn="প্রোপার্টি ও ইউনিট">Properties and units</h3><ul><li data-bn="রিসোর্ট, হোটেল, হাউজবোট">Resorts, hotels, houseboats</li><li data-bn="রুম, কটেজ, ডুপ্লেক্স, কেবিন">Rooms, cottages, duplexes, cabins</li><li data-bn="নিজের আইকনসহ সুবিধার তালিকা">Amenities with your own icons</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="grid"></span><h3 data-bn="লাইভ বোর্ড">Live board</h3><ul><li data-bn="ভবনের গ্রিড ও নৌকার নকশা">Building grid and boat layout</li><li data-bn="ফাঁকা, বুকড, হোল্ড, রক্ষণাবেক্ষণ">Free, booked, held, maintenance</li><li data-bn="সঙ্গে সঙ্গে হালনাগাদ">Updates the moment anything changes</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="tag"></span><h3 data-bn="দাম নির্ধারণ">Pricing</h3><ul><li data-bn="সপ্তাহের দিন ও সপ্তাহান্তের রেট">Weekday and weekend rates</li><li data-bn="ছুটি ও মৌসুমের নিয়ম">Holiday and season rules</li><li data-bn="রাত ধরে বিলের হিসাব">Night-by-night price quote</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="card"></span><h3 data-bn="বুকিং ও পেমেন্ট">Bookings and payments</h3><ul><li data-bn="১০ মিনিটের হোল্ড, ডাবল বুকিং নেই">10-minute hold, no double bookings</li><li data-bn="অগ্রিম বা পূর্ণ পেমেন্ট">Advance or full payment</li><li data-bn="স্ক্রিনশট দেখে যাচাই ও বাতিল">Screenshot check and cancellation</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="ticket"></span><h3 data-bn="ইভেন্ট ও ট্যুর">Events and tours</h3><ul><li data-bn="প্যাকেজ থেকে তারিখভিত্তিক ইভেন্ট">Dated events made from packages</li><li data-bn="সিট সীমা ও সিট হোল্ড">Seat limits and seat holds</li><li data-bn="বাসের ধরন, যাত্রাপথ, কী আনতে হবে">Transport, itinerary, what to bring</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="users"></span><h3 data-bn="গ্রাহক (CRM)">Customers (CRM)</h3><ul><li data-bn="ইমেইল ধরে একটাই গ্রাহক প্রোফাইল">One profile per email</li><li data-bn="রুম ও ইভেন্টের পুরো ইতিহাস">Room and event history</li><li data-bn="কে কতবার এসেছেন দেখুন">See who comes back</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="link"></span><h3 data-bn="পার্টনার ও পেআউট">Partners and payouts</h3><ul><li data-bn="B2B ও MoU পার্টনার">B2B and MoU partners</li><li data-bn="শতাংশ বা নির্দিষ্ট কমিশন">Percent or flat commission</li><li data-bn="খাতা, পেআউট অনুরোধ ও অনুমোদন">Ledger, payout requests and approval</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="swap"></span><h3 data-bn="রিসেলার চুক্তি">Reseller agreements</h3><ul><li data-bn="এজেন্সির মধ্যে রুম বিক্রির চুক্তি">Agency-to-agency selling</li><li data-bn="রাত ধরে কমিশন ও স্টেটমেন্ট">Per-night commission, statements</li><li data-bn="ফেরতের স্পষ্ট নিয়ম">Clear refund rules</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="clipboard"></span><h3 data-bn="ভেন্ডর ও বাজেট">Vendors and budgets</h3><ul><li data-bn="গাইড, গাড়ি, নৌকা, রিসোর্ট ভেন্ডর">Guides, cars, boats, resorts</li><li data-bn="ভেন্ডরের রেট">Vendor rates</li><li data-bn="ট্যুরের খরচের বাজেট">Trip cost budgets</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="globe"></span><h3 data-bn="ওয়েবসাইটের কনটেন্ট">Website content</h3><ul><li data-bn="ব্লগ, পেজ, ঘোষণা">Blog, pages, announcements</li><li data-bn="ছবি ও ভিডিওর একটাই লাইব্রেরি">One photo and video library</li><li data-bn="কোম্পানির তথ্য">Company details</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="code"></span><h3 data-bn="API ও ডকুমেন্টেশন">API and docs</h3><ul><li data-bn="API কী, সিক্রেট ও অনুমতি">API key, secret and scopes</li><li data-bn="প্রতিটি মডিউলে API ট্যাব">An API tab in every module</li><li data-bn="cURL, JavaScript, Python উদাহরণ">cURL, JavaScript, Python samples</li></ul></article>
+      <article class="fcard"><span class="ico" data-ico="shield"></span><h3 data-bn="নিরাপদ ও দ্বিভাষিক">Private and bilingual</h3><ul><li data-bn="প্রতিটি ব্যবসার ডেটা আলাদা">Every business walled off</li><li data-bn="স্টাফ ও ভূমিকা অনুযায়ী অনুমতি">Staff roles and permissions</li><li data-bn="বাংলা ও ইংরেজি কনসোল">Bengali and English console</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="who">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 data-bn="কে কী পায়">Who gets what</h2>
+      <p data-bn="যেটা আপনার মতো শোনায়, সেটা বেছে নিন।">Pick the one that sounds like you.</p>
+    </div>
+    <div class="tabs" role="tablist" id="rtabs">
+      <button role="tab" type="button" aria-selected="true" data-r="owner" data-bn="মালিক বা এজেন্সি">Owner or agency</button>
+      <button role="tab" type="button" aria-selected="false" data-r="partner" data-bn="সেলস ও MoU পার্টনার">Sales &amp; MoU partner</button>
+      <button role="tab" type="button" aria-selected="false" data-r="reseller" data-bn="রিসেলার">Reseller</button>
+      <button role="tab" type="button" aria-selected="false" data-r="dev" data-bn="ওয়েবসাইট ডেভেলপার">Website developer</button>
+    </div>
+    <div class="rolebox on" data-role="owner"><h3 data-bn="আপনি রিসোর্ট, হোটেল, হাউজবোট বা ট্যুর চালান">You run a resort, hotel, houseboat or tours</h3><p class="t" data-bn="এটাই আপনার কন্ট্রোল রুম।">This is your control room.</p>
+      <div class="g"><span class="ico" data-ico="grid"></span><div><b data-bn="লাইভ বোর্ড ও ইনভেন্টরি">Live board and inventory</b><span class="d" data-bn="প্রোপার্টি, রুম, কেবিন ও দাম আপনার নিয়মে।">Properties, rooms, cabins and prices, your way.</span></div></div>
+      <div class="g"><span class="ico" data-ico="ticket"></span><div><b data-bn="ইভেন্ট ও বুকিং">Events and bookings</b><span class="d" data-bn="হোল্ড, পেমেন্ট যাচাই, বাতিল। সব এক তালিকায়।">Holds, payment checks, cancellations, in one list.</span></div></div>
+      <div class="g"><span class="ico" data-ico="users"></span><div><b data-bn="গ্রাহক ও টিম">Customers and team</b><span class="d" data-bn="গ্রাহকের ইতিহাস, স্টাফ ও তাদের অনুমতি।">Guest history, staff and what each may do.</span></div></div>
+      <div class="g"><span class="ico" data-ico="chart"></span><div><b data-bn="পার্টনার ও হিসাব">Partners and money</b><span class="d" data-bn="কমিশন, পেআউট অনুমোদন, ভেন্ডর ও বাজেট।">Commission, payout approval, vendors and budgets.</span></div></div></div>
+    <div class="rolebox" data-role="partner"><h3 data-bn="আপনি অতিথি এনে দেন">You bring guests</h3><p class="t" data-bn="আপনি অতিথি পাঠান, কত আয় হলো ঠিক দেখেন।">You send guests and see exactly what you earned.</p>
+      <div class="g"><span class="ico" data-ico="link"></span><div><b data-bn="নিজের ছোট লিংক">Your own short link</b><span class="d" data-bn="পরিষ্কার ঠিকানা, যেখানে খুশি শেয়ার করুন।">A clean address you can share anywhere.</span></div></div>
+      <div class="g"><span class="ico" data-ico="check"></span><div><b data-bn="নিজে থেকেই জমা">Credited automatically</b><span class="d" data-bn="লিংক ধরে আসা বুকিং আপনার, দাবি করতে হয় না।">Bookings that follow your link are yours, no claims.</span></div></div>
+      <div class="g"><span class="ico" data-ico="chart"></span><div><b data-bn="নিজের ড্যাশবোর্ড">Your own dashboard</b><span class="d" data-bn="বুকিং, বিক্রি, কমিশন ও তোলার মতো টাকা।">Bookings, sales, commission and what you can withdraw.</span></div></div>
+      <div class="g"><span class="ico" data-ico="card"></span><div><b data-bn="পেআউট চান">Ask for a payout</b><span class="d" data-bn="মালিক অনুমোদন করে টাকা দেন।">The owner approves and pays.</span></div></div></div>
+    <div class="rolebox" data-role="reseller"><h3 data-bn="আপনি অন্যের রুম নিজের গ্রাহকের কাছে বিক্রি করেন">You sell other people's rooms</h3><p class="t" data-bn="গ্রাহক আপনার, থাকা ও টাকা মালিকের।">The guest is yours. The stay and the money are the owner's.</p>
+      <div class="g"><span class="ico" data-ico="swap"></span><div><b data-bn="মালিকের সঙ্গে চুক্তি">An agreement with each owner</b><span class="d" data-bn="কোন প্রোপার্টি বিক্রি করবেন ও কমিশন কত, স্পষ্ট দেখুন।">See which properties you may sell and your commission.</span></div></div>
+      <div class="g"><span class="ico" data-ico="grid"></span><div><b data-bn="লাইভ ফাঁকা দেখুন">Live availability</b><span class="d" data-bn="মালিকের নিজের দামে যেকোনো তারিখে।">At the owner's own price, for any dates.</span></div></div>
+      <div class="g"><span class="ico" data-ico="timer"></span><div><b data-bn="১০ মিনিটের হোল্ড">A 10-minute hold</b><span class="d" data-bn="অতিথি পেমেন্ট করা পর্যন্ত রুম আটকে রাখুন।">Hold the room while the guest pays.</span></div></div>
+      <div class="g"><span class="ico" data-ico="clipboard"></span><div><b data-bn="কমিশন স্টেটমেন্ট">Commission statements</b><span class="d" data-bn="প্রতি রাত বা প্রতি বুকিং ধরে।">Per night or per booking.</span></div></div></div>
+    <div class="rolebox" data-role="dev"><h3 data-bn="আপনি একটি ব্যবসার ওয়েবসাইট বানান">You build a travel website</h3><p class="t" data-bn="ডিজাইন আপনার। ডেটা ও বুকিং ইঞ্জিন আমাদের।">Design anything. We supply the data and the booking engine.</p>
+      <div class="g"><span class="ico" data-ico="key"></span><div><b data-bn="API কী ও সিক্রেট">API key and secret</b><span class="d" data-bn="অনুমতি বেছে নিন: শুধু পড়া, বুকিং নেওয়া, বা দুটোই।">Choose scopes: read, take bookings, or both.</span></div></div>
+      <div class="g"><span class="ico" data-ico="code"></span><div><b data-bn="প্রতিটি মডিউলে ডকুমেন্টেশন">Docs inside every module</b><span class="d" data-bn="এন্ডপয়েন্ট ও কপি-পেস্ট নমুনা।">Endpoints and copy-paste samples.</span></div></div>
+      <div class="g"><span class="ico" data-ico="building"></span><div><b data-bn="ইনভেন্টরি, দাম, ইভেন্ট">Inventory, prices, events</b><span class="d" data-bn="রুম, ফাঁকা অবস্থা, ইভেন্টের সিট ও দামের হিসাব।">Rooms, availability, event seats and price quotes.</span></div></div>
+      <div class="g"><span class="ico" data-ico="globe"></span><div><b data-bn="কনটেন্ট এন্ডপয়েন্ট">Content endpoints</b><span class="d" data-bn="ব্লগ, গ্যালারি, পেজ, ঘোষণা ও কোম্পানির তথ্য।">Blog, gallery, pages, notices and company info.</span></div></div></div>
+  </div>
+</section>
+
+<section class="band" id="developers">
+  <div class="wrap dev-in">
+    <div>
+      <div class="sec-h" style="margin-bottom:0"><h2 data-bn="আপনার ওয়েবসাইট। আমাদের ইঞ্জিন।">Your website. Our engine.</h2>
+      <p data-bn="দুটি হেডারে কী ও সিক্রেট পাঠান, রুম, দাম ও কনটেন্ট পড়ুন। আরেকটি কলেই বুকিং নিন।">Send your key and secret in two headers, read rooms, prices and content, and take a booking with one more call.</p></div>
+      <ul class="ticks"><li data-bn="যেকোনো ওয়েবসাইট বা অ্যাপের সঙ্গে চলে">Works with any website or app</li><li data-bn="প্রতিটি কীর জন্য আলাদা অনুমতি">Permissions you choose for each key</li><li data-bn="কনসোলের ভেতরেই লাইভ API ডকুমেন্টেশন">Live API docs inside the console</li></ul>
+    </div>
+    <div class="code"><div class="ctabs" id="ctabs"><button type="button" class="on" data-c="curl">cURL</button><button type="button" data-c="js">JavaScript</button><button type="button" data-c="py">Python</button></div><pre id="cpre" tabindex="0"></pre></div>
+  </div>
+</section>
+
+<div id="site-contact"></div>
+</main>
+<div id="site-footer"></div>
+</body>
+</html>
